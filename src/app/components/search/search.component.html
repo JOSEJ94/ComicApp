@@ -1,0 +1,18 @@
+<h1>Resultado de búsqueda de Héroes</h1>
+<hr />
+<div *ngIf="word != '' && heroes.length === 0" class="card border-info mb-3">
+  <div class="card-body text-info">
+    <h5 class="card-title">Sin resultados</h5>
+    <p class="card-text">
+      No se encontró ningún héroe con el termino:
+      {{ word }}
+    </p>
+  </div>
+</div>
+<div class="card-columns">
+  <app-heroe-tarjeta
+    *ngFor="let heroe of heroes"
+    [heroe]="heroe"
+    [index]="heroe.id"
+  ></app-heroe-tarjeta>
+</div>
